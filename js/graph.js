@@ -271,16 +271,16 @@ class Graph{
             let id_array = this.data.nodes.map( d => d.id);
 
             // // Logic for max and min, this is being used to come up with scaling for an entire dataset
-            // let current_max = d3.max(avg_array);
-            // let current_min = d3.min(avg_array);
+            let current_max = d3.max(avg_array);
+            let current_min = d3.min(avg_array);
 
-            // let link_extent = d3.extent(this.data.links.map( d => d.mean ));
-            // let current_minL = link_extent[0];
-            // let current_maxL = link_extent[1];
+            let link_extent = d3.extent(this.data.links.map( d => d.mean ));
+            let current_minL = link_extent[0];
+            let current_maxL = link_extent[1];
 
 
-            // console.log('CURRENT NODE MAX AND MIN',current_max,current_min)
-            // console.log('CURRENT LINK MAX AND MIN',current_maxL,current_minL)
+            console.log('CURRENT NODE MAX AND MIN',current_max,current_min)
+            console.log('CURRENT LINK MAX AND MIN',current_maxL,current_minL)
             // if(current_max > this.max){
             //     this.max=current_max
             // }

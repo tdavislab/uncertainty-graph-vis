@@ -3760,10 +3760,10 @@ function renderCoarseEgo(uncert,file){
                 proc_rect.linkScale = this.mutual_information_link_scale
             }
             else{
-                // RUNNING NODE MAX AND MIN 0.30256182745293475 -0.004258117355327653
-                // RUNNING LINK MAX AND MIN 64 0.30303030303030304
-                proc_rect.nodeScale = [-0.0045,0.4];
-                proc_rect.linkScale = [0.3, 65];
+                // RUNNING NODE MAX AND MIN 0.534 0
+                // RUNNING LINK MAX AND MIN 764 0
+                proc_rect.nodeScale = [0, 0.534];
+                proc_rect.linkScale = [0, 770];
             }
 
             full_rect.myGraph
