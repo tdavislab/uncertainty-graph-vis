@@ -1,9 +1,14 @@
-# Uncertainty Visualization for Graph Reduction
+# Uncertainty Visualization for Graph Coarsening
 
 
-This is the web-demo accompanying the paper *Uncertainty Visualization for Graph Reduction*. This demo is intended to allow the user to explore the algorithms discussed in the paper across a range of datasets. Here's the abstract from the paper: 
+This is the web-demo accompanying the paper *Uncertainty Visualization for Graph Coarsening*. This demo is intended to allow the user to explore the algorithms discussed in the paper across a range of datasets. Here's the abstract from the paper: 
 
-> INSERT ABSTRACT WHEN IT'S READY
+The complexity of large real-world graphs makes their analyses prohibitively costly and their visualizations uninformative. The idea behind graph reduction is to reduce the size of a graph while preserving its properties of interest. To improve computational efficiency and to provide provable guarantees, many graph reduction techniques employ randomization. 
+However, the uncertainty associated with randomized graph reduction and its subsequent interpretation has remained largely unexplored. 
+In this paper, we present a framework to quantify and visualize the uncertainty associated with randomized graph reduction techniques. 
+We focus on spectral clustering introduced by Ng, Jordan, and Weiss, a popular graph reduction technique that reduces the number of nodes by clustering the nodes of a graph into super-nodes. 
+We introduce two uncertainty measures -- local adjusted Rand indices and co-occurrences -- to quantify and visualize uncertainty associated with an ensemble of reduced graphs. We demonstrate via experiments, that these measures complement each other in visualizing uncertainty and guiding the selection of optimal numbers of clusters. 
+
 
 ## Installation
 
