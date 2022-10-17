@@ -1,0 +1,1 @@
+{"nodes": [{"id": 0, "weight": 18340.0}, {"id": 1, "weight": 8843.0}, {"id": 2, "weight": 234.0}], "edges": [{"source": 0, "target": 1, "weight": 379.0}, {"source": 0, "target": 2, "weight": 5.0}, {"source": 1, "target": 2, "weight": 5.0}]}
