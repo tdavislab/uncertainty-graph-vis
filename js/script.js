@@ -250,6 +250,11 @@ $('#uncertaintyDrop').on('hide.bs.dropdown', function (e) {
                 renderCoarseEgo(target,'njw_spectral_clustering')
 
             }
+            else if(active_data == 'asia'){
+                //Render coarse graph for ego
+                renderCoarseAsia(target,'njw_spectral_clustering')
+
+            }
         }
         else if (active_alg == 'spec_coarse'){
             if (active_data == 'rectangle'){
@@ -392,6 +397,11 @@ $('#algDrop').on('hide.bs.dropdown', function (e) {
             else if(active_data == 'ego'){
                 //Render coarse graph for ego
                 renderCoarseEgo(active_uncertainty,'njw_spectral_clustering')
+
+            }
+            else if(active_data == 'asia'){
+                //Render coarse graph for ego
+                renderCoarseAsia(active_uncertainty,'njw_spectral_clustering')
 
             }
 
@@ -781,6 +791,8 @@ $('#datasetDrop').on('hide.bs.dropdown', function (e) {
             //node vis button
             $(`#dropdownMenuButtonNode`).removeClass('disabled')
 
+            $(`#co_occurrence`).removeClass('disabled')
+
             //Shows minigraph and labels
             d3.select('#graph-mini').style('visibility','visible')
             d3.select('#heatmap-label').style('visibility','visible')
@@ -807,6 +819,8 @@ $('#datasetDrop').on('hide.bs.dropdown', function (e) {
             $(`#dropdownMenuButtonUncertainty`).addClass('disabled')
             //node vis button
             $(`#dropdownMenuButtonNode`).addClass('disabled')
+
+            $(`#co_occurrence`).removeClass('disabled')
 
             //Shows minigraph and labels
             d3.select('#graph-mini').style('visibility','visible')
@@ -837,6 +851,8 @@ $('#datasetDrop').on('hide.bs.dropdown', function (e) {
             //node vis button
             $(`#dropdownMenuButtonNode`).removeClass('disabled')
 
+            $(`#co_occurrence`).removeClass('disabled')
+
             //Shows minigraph and labels
             d3.select('#graph-mini').style('visibility','visible')
             d3.select('#heatmap-label').style('visibility','visible')
@@ -863,6 +879,8 @@ $('#datasetDrop').on('hide.bs.dropdown', function (e) {
             $(`#dropdownMenuButtonUncertainty`).removeClass('disabled')
             //node vis button
             $(`#dropdownMenuButtonNode`).removeClass('disabled')
+
+            $(`#co_occurrence`).removeClass('disabled')
 
             //Shows minigraph and labels
             d3.select('#graph-mini').style('visibility','visible')
@@ -892,6 +910,8 @@ $('#datasetDrop').on('hide.bs.dropdown', function (e) {
             //node vis button
             $(`#dropdownMenuButtonNode`).removeClass('disabled')
 
+            $(`#co_occurrence`).removeClass('disabled')
+
             //Shows minigraph and labels
             d3.select('#graph-mini').style('visibility','visible')
             d3.select('#heatmap-label').style('visibility','visible')
@@ -919,6 +939,8 @@ $('#datasetDrop').on('hide.bs.dropdown', function (e) {
             $(`#dropdownMenuButtonUncertainty`).removeClass('disabled')
             //node vis button
             $(`#dropdownMenuButtonNode`).removeClass('disabled')
+
+            $(`#co_occurrence`).removeClass('disabled')
 
             //Shows minigraph and labels
             d3.select('#graph-mini').style('visibility','visible')
@@ -949,6 +971,8 @@ $('#datasetDrop').on('hide.bs.dropdown', function (e) {
             //node vis button
             $(`#dropdownMenuButtonNode`).removeClass('disabled')
 
+            $(`#co_occurrence`).removeClass('disabled')
+
             //Shows minigraph and labels
             d3.select('#graph-mini').style('visibility','visible')
             d3.select('#heatmap-label').style('visibility','visible')
@@ -978,11 +1002,15 @@ $('#datasetDrop').on('hide.bs.dropdown', function (e) {
             //node vis button
             $(`#dropdownMenuButtonNode`).removeClass('disabled')
 
+            $(`#co_occurrence`).removeClass('disabled')
+
             //Shows minigraph and labels
             d3.select('#graph-mini').style('visibility','visible')
             d3.select('#heatmap-label').style('visibility','visible')
             d3.select('#instances-label').style('visibility','hidden')
             d3.select('#mini-label').style('visibility','visible')
+
+            $(`#co_occurrence`).removeClass('disabled')
 
             $(`#spars`).addClass('disabled')
             $(`#unifying_framework_coarse`).addClass('disabled')
@@ -1013,6 +1041,8 @@ $('#datasetDrop').on('hide.bs.dropdown', function (e) {
             d3.select('#instances-label').style('visibility','hidden')
             d3.select('#mini-label').style('visibility','visible')
 
+            $(`#co_occurrence`).removeClass('disabled')
+
             $(`#spars`).addClass('disabled')
             $(`#unifying_framework_coarse`).addClass('disabled')
             $(`#spec_coarse`).addClass('disabled')
@@ -1036,6 +1066,8 @@ $('#datasetDrop').on('hide.bs.dropdown', function (e) {
             //node vis button
             $(`#dropdownMenuButtonNode`).removeClass('disabled')
 
+            $(`#co_occurrence`).removeClass('disabled')
+
             //Shows minigraph and labels
             d3.select('#graph-mini').style('visibility','visible')
             d3.select('#heatmap-label').style('visibility','visible')
@@ -1048,6 +1080,38 @@ $('#datasetDrop').on('hide.bs.dropdown', function (e) {
             $(`#unifying_framework_spars`).addClass('disabled')
             $(`#coarse`).addClass('active')
             renderCoarseEgo(active_uncertainty,'njw_spectral_clustering')
+
+        }
+        else if(target =='asia'){
+            // highlights coarse algorithm
+            let kids = $('#algDrop').find('div')
+            kids.removeClass( "active" );
+            // $(`#gemsec`).addClass("disabled")
+            $(`#coarse`).addClass("active")
+            $(`#coarse`).removeClass('disabled')
+
+            //Reenables uncertainty buttons
+            //re-enables buttons that didn't work with sparsification algo
+            //uncertainty button
+            $(`#dropdownMenuButtonUncertainty`).removeClass('disabled')
+            //node vis button
+            $(`#dropdownMenuButtonNode`).removeClass('disabled')
+
+            $(`#co_occurrence`).addClass('disabled')
+            $(`#co_occurrence`).removeClass('active')
+
+            //Shows minigraph and labels
+            d3.select('#graph-mini').style('visibility','visible')
+            d3.select('#heatmap-label').style('visibility','visible')
+            d3.select('#instances-label').style('visibility','hidden')
+            d3.select('#mini-label').style('visibility','visible')
+
+            $(`#spars`).addClass('disabled')
+            $(`#unifying_framework_coarse`).addClass('disabled')
+            $(`#spec_coarse`).addClass('disabled')
+            $(`#unifying_framework_spars`).addClass('disabled')
+            $(`#coarse`).addClass('active')
+            renderCoarseAsia(active_uncertainty,'njw_spectral_clustering')
 
         }
     }
@@ -1502,6 +1566,8 @@ function renderCoarseRect(uncert,file){
                 // Ensures links are visibile.
                 full_rect.myGraph
                     .linkVisibility(true);
+                full_rect.myGraph
+                    .nodeVisibility(true);
                 proc_rect.myGraph
                     .linkVisibility(true);
                 instance_graph.myGraph 
@@ -1585,7 +1651,8 @@ function renderCoarseRect(uncert,file){
             // Ensures links are visibile.
             full_rect.myGraph
                 .linkVisibility(true);
-
+            full_rect.myGraph
+                .nodeVisibility(true);
             // Draws the graphs
             full_rect.drawGraph(proc_rect);
             proc_rect.drawGraph(full_rect);
@@ -1813,6 +1880,8 @@ function renderCoarseLesmis(uncert,file){
                 // Ensures links are visibile.
                 full_rect.myGraph
                     .linkVisibility(true);
+                full_rect.myGraph
+                    .nodeVisibility(true);
                 proc_rect.myGraph
                     .linkVisibility(true);
                 instance_graph.myGraph 
@@ -1889,6 +1958,8 @@ function renderCoarseLesmis(uncert,file){
 
             full_rect.myGraph
                 .linkVisibility(true);
+            full_rect.myGraph
+                .nodeVisibility(true);
             proc_rect.myGraph
                 .zoom(2.7);
             full_rect.myGraph
@@ -2120,6 +2191,8 @@ function renderCoarseCele(uncert,file){
                 // Ensures links are visibile.
                 full_rect.myGraph
                     .linkVisibility(true);
+                full_rect.myGraph
+                    .nodeVisibility(true);
                 proc_rect.myGraph
                     .linkVisibility(true);
                 instance_graph.myGraph 
@@ -2201,6 +2274,8 @@ function renderCoarseCele(uncert,file){
             
             full_rect.myGraph
                 .linkVisibility(true);
+            full_rect.myGraph
+                .nodeVisibility(true);
 
             full_rect.drawGraph(proc_rect);
             proc_rect.drawGraph(full_rect);
@@ -2745,6 +2820,8 @@ function renderCoarseEnron(uncert,file){
                 // Ensures links are visibile.
                 full_rect.myGraph
                     .linkVisibility(true);
+                full_rect.myGraph
+                    .nodeVisibility(true);
                 proc_rect.myGraph
                     .linkVisibility(true);
                 instance_graph.myGraph 
@@ -2823,6 +2900,8 @@ function renderCoarseEnron(uncert,file){
 
             full_rect.myGraph
                 .linkVisibility(true);
+            full_rect.myGraph
+                .nodeVisibility(true);
             proc_rect.myGraph
                 .zoom(2.7);
             full_rect.myGraph
@@ -3060,6 +3139,8 @@ function renderCoarseFootball(uncert,file){
                 // Ensures links are visibile.
                 full_rect.myGraph
                     .linkVisibility(true);
+                full_rect.myGraph
+                    .nodeVisibility(true);
                 proc_rect.myGraph
                     .linkVisibility(true);
                 instance_graph.myGraph 
@@ -3138,6 +3219,8 @@ function renderCoarseFootball(uncert,file){
 
             full_rect.myGraph
                 .linkVisibility(true);
+            full_rect.myGraph
+                .nodeVisibility(true);
             proc_rect.myGraph
                 .zoom(2.7);
             full_rect.myGraph
@@ -3375,6 +3458,8 @@ function renderCoarseAuthor(uncert,file){
                 // Ensures links are visibile.
                 full_rect.myGraph
                     .linkVisibility(true);
+                full_rect.myGraph
+                    .nodeVisibility(true);
                 proc_rect.myGraph
                     .linkVisibility(true);
                 instance_graph.myGraph 
@@ -3453,6 +3538,8 @@ function renderCoarseAuthor(uncert,file){
 
             full_rect.myGraph
                 .linkVisibility(true);
+            full_rect.myGraph
+                .nodeVisibility(true);
             proc_rect.myGraph
                 .zoom(2.7);
             full_rect.myGraph
@@ -3690,6 +3777,8 @@ function renderCoarseEgo(uncert,file){
                 // Ensures links are visibile.
                 full_rect.myGraph
                     .linkVisibility(true);
+                full_rect.myGraph
+                    .nodeVisibility(true);
                 proc_rect.myGraph
                     .linkVisibility(true);
                 instance_graph.myGraph 
@@ -3768,6 +3857,8 @@ function renderCoarseEgo(uncert,file){
 
             full_rect.myGraph
                 .linkVisibility(true);
+            full_rect.myGraph
+                .nodeVisibility(true);
             proc_rect.myGraph
                 .zoom(2.7);
             full_rect.myGraph
@@ -3851,6 +3942,151 @@ function renderCoarseEgo(uncert,file){
                 // Feeding in graph data like this speeds things up really well!
                 full_rect.myGraph.graphData(full_rect.data)
                 proc_rect.myGraph.graphData(proc_rect.data)
+
+            })
+
+        })
+    }
+    
+}
+
+function renderCoarseAsia(uncert,file){
+
+    // Type of coarsening uncertainty vis
+    this.uncert=uncert;
+
+    // Loads lastfm-asia data
+    //Sets default k
+    this.k = 4
+    let range = [4,30]
+    let that = this;
+
+    //Creates k bar
+    let k_Bar = new kBar(this.k,range,'coarse-asia');
+
+    // No co-occurence for this one, so I removed it, if I need it back,
+    // copy and past and instert below this comment
+    if (uncert == 'co_occurrence'){
+
+        console.log("This button shouldn't be active.")
+
+    }
+    else{
+        // Loads the data - I chose the default view here to have 9 clusters
+        Promise.all([
+            //reduced
+            d3.json(`data/${file}/lastfm_asia_7624/cluster_${k}/${uncert}/uncertainty_graph.json`),
+            //original
+            // d3.json(`data/${file}/lastfm_asia_7624/cluster_${k}/${uncert}/ori_graph_with_cluster.json`),
+            // uncertainty matrix
+            d3.csv(`data/${file}/lastfm_asia_7624/cluster_${k}/${uncert}/uncertain_mat.csv`)
+
+        ]).then(function(files){
+            
+            // Loads the data into the graph class
+            proc_rect.data = files[0];
+            // full_rect.data = files[1];
+
+            // Handling this graph's parameters
+            proc_rect.type = 'clust'
+            if (uncert == 'local_mutual_information'){
+                proc_rect.nodeScale = this.mutual_information_node_scale
+                proc_rect.linkScale = this.mutual_information_link_scale
+            }
+            else{
+                // RUNNING NODE MAX AND MIN 0.534 0
+                // RUNNING LINK MAX AND MIN 764 0
+                proc_rect.nodeScale = [0, 0.534];
+                proc_rect.linkScale = [0, 770];
+            }
+
+            full_rect.myGraph
+                .linkVisibility(false);
+            full_rect.myGraph
+                .nodeVisibility(false);
+            proc_rect.myGraph
+                .zoom(2.7);
+            full_rect.myGraph
+                .zoom(0.4);
+
+            // Recalculates scales and such for new data passed in
+            // full_rect.prepGraph(proc_rect);
+            proc_rect.prepGraph(full_rect);
+
+            // Draws the graph
+            // full_rect.drawGraph(proc_rect);
+            proc_rect.drawGraph(full_rect);
+
+            // heatmap initializing data
+            heatMap.myGraph.nodeVisibility(false)
+            heatMap.myGraph.linkVisibility(false)
+
+            heatMap.data = files[1];
+            heatMap.nodeScale = proc_rect.nodeScale;
+            heatMap.unif_spars = false;
+            heatMap.coOccur = false;
+            heatMap.data_name = 'asia_7624';
+            heatMap.active_alg = file;
+            heatMap.uncert = uncert;
+            heatMap.k = k;
+            heatMap.removeHeatMap()
+            heatMap.createHeatMap()
+            // Pass references to heatmap as well
+            heatMap.full_ref = full_rect;
+            heatMap.proc_ref = proc_rect;
+
+
+        })
+
+        // detects change on bar and updates data shown accordingly
+        d3.select('#coarse-asia').on('input', function(d){
+            let k = k_Bar.activeK;
+            console.log('in script',k)
+                    
+            // Loads data based on parameters 
+            Promise.all([
+                //reduced
+                d3.json(`data/${file}/lastfm_asia_7624/cluster_${k}/${uncert}/uncertainty_graph.json`),
+                //original
+                // d3.json(`data/${file}/lastfm_asia_7624/cluster_${k}/${uncert}/ori_graph_with_cluster.json`),
+                // uncertainty matrix
+                d3.csv(`data/${file}/lastfm_asia_7624/cluster_${k}/${uncert}/uncertain_mat.csv`)
+
+            ]).then(function(files){
+                // Loads the data
+                proc_rect.data = files[0];
+                // full_rect.data = files[1];
+
+                // handling the zooming of this new data 
+                proc_rect.myGraph
+                    .zoom(2.7);
+                full_rect.myGraph
+                    .zoom(0.4);
+
+                heatMap.myGraph.nodeVisibility(false)
+                heatMap.myGraph.linkVisibility(false)
+
+                heatMap.removeHeatMap()
+                heatMap.data = files[1];
+                heatMap.unif_spars = false;
+                heatMap.coOccur = false;
+                heatMap.data_name = 'asia_7624';
+                heatMap.active_alg = file;
+                heatMap.uncert = uncert;
+                heatMap.k = k;
+                heatMap.createHeatMap()
+                
+                // Recalculates scales and such for new data passed in - should I go back to making separate graph objects?
+                full_rect.prepGraph(proc_rect);
+                proc_rect.prepGraph(full_rect);
+
+                // Pass references to heatmap as well
+                heatMap.full_ref = full_rect;
+                heatMap.proc_ref = proc_rect;
+
+                // Feeding in graph data like this speeds things up really well!
+                // full_rect.myGraph.graphData(full_rect.data)
+                // proc_rect.myGraph.graphData(proc_rect.data)
 
             })
 
