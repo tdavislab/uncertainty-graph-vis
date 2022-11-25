@@ -1,5 +1,8 @@
 # Uncertainty Visualization for Graph Coarsening
 
+Fangfei Lan, Sourabh Palande, Michael Young, Bei Wang. Uncertainty Visualization for Graph Coarsening. IEEE BIGDATA Workshop on Graph
+Techniques for Adversarial Activity Analytics (GTA3), 2022.
+
 
 This is the web-demo accompanying the paper *Uncertainty Visualization for Graph Coarsening*. This demo is intended to allow the user to explore the algorithms discussed in the paper across a range of datasets. Here's the abstract from the paper: 
 
